@@ -8,28 +8,32 @@ export default function EventTypes() {
     const [selectedEventType, setSelectedEventType] = useState("")
 
     return (
-        <View className="px-7 pt-[76px]">
-            <HeaderTitle title="Select Event Type" />
+        <View className="px-7" style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
+                <View className="pt-[76px]">
+                    <HeaderTitle title="Select Event Type" />
 
-            <View className="mt-[190px]">
-                <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType(EventNameTypes.BIRTHDAY) }}>
-                    <View className={`${selectedEventType === EventNameTypes.BIRTHDAY ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
-                        <Text className="text-center text-2xl text-primary">{EventNameTypes.BIRTHDAY}</Text>
+                    <View className="mt-[190px]">
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType(EventNameTypes.BIRTHDAY) }}>
+                            <View className={`${selectedEventType === EventNameTypes.BIRTHDAY ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
+                                <Text className="text-center text-2xl text-primary">{EventNameTypes.BIRTHDAY}</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType(EventNameTypes.ANNIVERSARY) }}>
+                            <View className={`${selectedEventType === EventNameTypes.ANNIVERSARY ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
+                                <Text className="text-center text-2xl text-primary">{EventNameTypes.ANNIVERSARY}</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType("Custom") }}>
+                            <View className={`${selectedEventType === "Custom" ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
+                                <Text className="text-center text-2xl text-primary">+ New</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType(EventNameTypes.ANNIVERSARY) }}>
-                    <View className={`${selectedEventType === EventNameTypes.ANNIVERSARY ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
-                        <Text className="text-center text-2xl text-primary">{EventNameTypes.ANNIVERSARY}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6} onPress={() => { setSelectedEventType("Custom") }}>
-                    <View className={`${selectedEventType === "Custom" ? 'border-primary' : 'border-transparent'} py-4 rounded-lg bg-white/20 border-2  mb-3`}>
-                        <Text className="text-center text-2xl text-primary">+ New</Text>
-                    </View>
-                </TouchableOpacity>
+                </View>
             </View>
 
-            <View className="mt-12 mb-7">
+            <View className="mb-7">
                 <Button type={ButtonTypes.PRIMARY} text="Next" onPressEvent={() => { }} />
             </View>
 

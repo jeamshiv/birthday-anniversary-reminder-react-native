@@ -8,6 +8,8 @@ import EventTypes from './pages/event-types/EventTypes'
 import { assets } from './config'
 import AddEvent from './pages/add-event/AddEvent'
 import EventDate from './pages/event-date/EventDate'
+import SelectEventAvatar from './pages/select-event-avatar/SelectEventAvatar'
+import Home from './pages/home/Home'
 
 export default function AppStartPoint() {
   return (
@@ -16,9 +18,11 @@ export default function AppStartPoint() {
       <ImageBackground className="h-full"
         source={assets.bg.mainBg}
       >
-        <EventTypes />
+        {/* <EventTypes /> */}
         {/* <AddEvent eventType={EventNameTypes.ANNIVERSARY} /> */}
         {/* <EventDate /> */}
+        {/* <SelectEventAvatar /> */}
+        <Home />
       </ImageBackground>
     </>
   )
