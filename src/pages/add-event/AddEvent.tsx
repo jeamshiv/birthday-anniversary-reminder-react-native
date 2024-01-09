@@ -1,17 +1,20 @@
-import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TextInput, ImageBackground } from 'react-native'
 import React from 'react'
 import HeaderTitle from '../../components/header-title/HeaderTitle';
-import { commonStyles, theme } from '../../config';
+import { assets, commonStyles, theme } from '../../config';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/button/Button';
 import { ButtonTypes } from '../../types/commonInterface';
 
 type Props = {
-    eventType: string;
+    eventType?: string;
 }
 
 const AddEvent = (props: Props) => {
     return (
+        <ImageBackground className="h-full"
+        source={assets.bg.mainBg}
+      >
         <View className="px-7" style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <View className="pt-[76px] h-full">
@@ -29,7 +32,7 @@ const AddEvent = (props: Props) => {
 
                                 <View className="absolute right-0 bottom-0">
                                     <TouchableOpacity activeOpacity={0.6}>
-                                        <View className="bg-primary/100 w-12 h-12 flex-col justify-center items-center rounded-full border-2 border-white">
+                                        <View className="bg-primary/100 w-12 h-12 flex-col justify-center items-center rounded-full border-2 border-[#CFAAFF]">
                                             <Feather name="edit-2" color="white" size={22} />
                                         </View>
                                     </TouchableOpacity>
@@ -74,6 +77,7 @@ const AddEvent = (props: Props) => {
 
 
         </View>
+        </ImageBackground>
     )
 }
 

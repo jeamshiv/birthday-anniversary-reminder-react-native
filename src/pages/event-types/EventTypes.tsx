@@ -1,13 +1,17 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 import HeaderTitle from '../../components/header-title/HeaderTitle'
 import Button from '../../components/button/Button'
 import { ButtonTypes, EventNameTypes } from '../../types/commonInterface'
+import { assets } from '../../config'
 
 export default function EventTypes() {
     const [selectedEventType, setSelectedEventType] = useState("")
 
     return (
+        <ImageBackground className="h-full"
+        source={assets.bg.mainBg}
+      >
         <View className="px-7" style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <View className="pt-[76px]">
@@ -38,5 +42,6 @@ export default function EventTypes() {
             </View>
 
         </View>
+        </ImageBackground>
     )
 }

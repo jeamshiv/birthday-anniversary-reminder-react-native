@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import React, { useState } from 'react'
 import HeaderTitle from '../../components/header-title/HeaderTitle'
 import { Calendar } from 'react-native-calendars'
 import Button from '../../components/button/Button'
 import { ButtonTypes } from '../../types/commonInterface'
+import { assets } from '../../config'
 
 type Props = {}
 
@@ -12,6 +13,9 @@ const EventDate = (props: Props) => {
     const [selected, setSelected] = useState('');
 
     return (
+        <ImageBackground className="h-full"
+        source={assets.bg.mainBg}
+      >
         <View className="px-7" style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <View className="pt-[76px] h-full">
@@ -43,6 +47,7 @@ const EventDate = (props: Props) => {
             </View>
 
         </View>
+        </ImageBackground>
     )
 }
 

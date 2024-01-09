@@ -1,8 +1,9 @@
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, FlatList, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native'
 import React from 'react'
 import HeaderTitle from '../../components/header-title/HeaderTitle'
 import { ButtonTypes } from '../../types/commonInterface'
 import Button from '../../components/button/Button'
+import { assets } from '../../config'
 
 export default function SelectEventAvatar() {
     const avatarListData = [{
@@ -88,35 +89,39 @@ export default function SelectEventAvatar() {
     )
 
     return (
-        <View className="px-7" style={{ flex: 1 }}>
-            <View style={{ flex: 1 }}>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <View className="pt-[76px] mb-8">
-                        <HeaderTitle title="Select Event Type" />
-                    </View>
-                    {/* render avatar here */}
-                    <View className="self-center">
-                        <SafeAreaView>
-                            <FlatList
-                                horizontal={false}
-                                data={avatarListData}
-                                renderItem={renderAvatarList}
-                                keyExtractor={item => item.id}
-                                showsVerticalScrollIndicator={false}
-                                numColumns={3}
-                            />
-                        </SafeAreaView>
-                    </View>
-                </ScrollView>
-            </View>
+        <ImageBackground className="h-full"
+            source={assets.bg.mainBg}
+        >
+            <View className="px-7" style={{ flex: 1 }}>
+                <View style={{ flex: 1 }}>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <View className="pt-[76px] mb-8">
+                            <HeaderTitle title="Select Event Type" />
+                        </View>
+                        {/* render avatar here */}
+                        <View className="self-center">
+                            <SafeAreaView>
+                                <FlatList
+                                    horizontal={false}
+                                    data={avatarListData}
+                                    renderItem={renderAvatarList}
+                                    keyExtractor={item => item.id}
+                                    showsVerticalScrollIndicator={false}
+                                    numColumns={3}
+                                />
+                            </SafeAreaView>
+                        </View>
+                    </ScrollView>
+                </View>
 
-            <View className="mb-2 pt-2">
-                <Button type={ButtonTypes.PRIMARY_OUTLINE} text="Cancel" onPressEvent={() => { }} />
-            </View>
-            <View className="mb-7">
-                <Button type={ButtonTypes.PRIMARY} text="Next" onPressEvent={() => { }} />
-            </View>
+                <View className="mb-2 pt-2">
+                    <Button type={ButtonTypes.PRIMARY_OUTLINE} text="Cancel" onPressEvent={() => { }} />
+                </View>
+                <View className="mb-7">
+                    <Button type={ButtonTypes.PRIMARY} text="Next" onPressEvent={() => { }} />
+                </View>
 
-        </View>
+            </View>
+        </ImageBackground>
     )
 }
